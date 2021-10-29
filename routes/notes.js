@@ -45,7 +45,7 @@ notes.post('/', (req, res) => {
 });
 
 
-notes.delete('/:id', (req, res) => {
+notes.delete('/api/notes/:id', (req, res) => {
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
         if (err) { console.log(err); }
         else {
@@ -62,9 +62,8 @@ notes.delete('/:id', (req, res) => {
             })
         };
 
-    }
-    )
-})
+    })
+});
 
 
 module.exports = notes;
