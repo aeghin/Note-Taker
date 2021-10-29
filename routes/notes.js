@@ -50,7 +50,7 @@ notes.delete('/api/notes/:id', (req, res) => {
         if (err) { console.log(err); }
         else {
             let nData = JSON.parse(data);
-            let newData = nData.filter(nData => nData.id != req.params.id);
+            let newData = nData.filter(nata => nata.id != req.params.id);
             console.log(req.params.id);
             console.log(newData);
             fs.writeFile('./db/db.json', JSON.stringify(newData, null, 4), (err) => {
@@ -63,7 +63,7 @@ notes.delete('/api/notes/:id', (req, res) => {
         };
 
     })
-});
+})
 
 
 module.exports = notes;
